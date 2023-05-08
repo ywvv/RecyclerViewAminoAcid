@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">RecyclerViewAminoAcid</string>
-    
+    <string name="molecule_name">Arginine</string>
+    <string name="molecule_3Letter">Arg</string>
+    <string name="molecule_1Letter">R</string>
+
     <string-array name="amino_acids_full_txt">
         <item>Alanine</item>
         <item>Arginine</item>
@@ -23,7 +26,7 @@
         <item>Tyrosine</item>
         <item>Valine</item>
     </string-array>
-    
+
     <string-array name="amino_acids_three_letter_txt">
         <item>Ala</item>
         <item>Arg</item>
