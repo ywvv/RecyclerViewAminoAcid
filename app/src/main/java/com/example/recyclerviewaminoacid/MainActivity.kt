@@ -3,9 +3,10 @@ package com.example.recyclerviewaminoacid
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.recyclerviewaminoacid.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
     private val aminoAcidModals = mutableListOf<AminoAcidModal>()
     private val aminoAcidImages = listOf(
         R.drawable.ic_alanine,
@@ -30,15 +31,15 @@ class MainActivity : AppCompatActivity() {
         R.drawable.ic_valine,
     )
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         setupAminoActiveModals()
 
-        val recyclerView: RecyclerView = findViewById(R.id.mRecyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = AminoAcidAdapter(aminoAcidModals)
+        binding.mRecyclerView.layoutManager = LinearLayoutManager(this)
+        binding.mRecyclerView.adapter = AminoAcidAdapter(aminoAcidModals)
     }
 
     private fun setupAminoActiveModals() {
